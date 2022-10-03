@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="latest-products spad">
+    <div class="container">
+       
+        <div class="row" id="product-list">
+           {%  for x in data %}
+           <div class="col-lg-3 col-sm-6 mix all dresses bags">
+            <div class="single-product-item">
+                <figure>
+                    <a href="#"><img src="{{x.product.picture.url}}" alt=""></a>
+                    <div class="p-status">new</div>
+                </figure>
+                <div class="product-text">
+                    <h6>{{x.description}}</h6>
+                    <p>${{x.price}}</p>
+                    <a href="{% url 'detail' x.id %}"><button class="btn btn-primary" href="">Detail</button>
+                    </a>
+                    <a href="{% url 'delete' x.id %}"><button class="btn btn-danger" href="">Delete</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+           {% endfor %} 
+            
+    </div>
+    <a href="{% url 'checkout' %}"><button class="btn btn-primary" href="">Checkout</button></a>
+
+</section>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="latest-products spad">
+    <div class="container">
+       
+        <div class="row" id="product-list">
+          
+           <div class="col-lg-3 col-sm-6 mix all dresses bags">
+            <div class="single-product-item">
+                <figure>
+                    <a href="#"><img src="{{data.product.picture.url}}" alt=""></a>
+                    <div class="p-status">new</div>
+                </figure>
+                <div class="product-text">
+                    <h6>{{data.product.description}}</h6>
+                    <p>${{data.product.price}}</p>
+                    
+                    <a href="{% url 'delete'  data.id %}" ><button class="btn btn-danger"> Delete</button></a>
+                   
+                </div>
+            </div>
+        </div>
+         
+            
+    </div>
+
+</section>
+{% endblock %}
