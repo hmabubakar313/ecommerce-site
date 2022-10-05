@@ -1,0 +1,6 @@
+
+*.env
+*.cpython-37.pyc
+*.pyc
+*__init__.py
+*__init__.cpython-310.pyc
